@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       const formData = new FormData(updateProductForm);
   
       try {
-        await updateProduct(productIdentificador, formData);
+        await updateProductId, formData);
         alert('Produto atualizado com sucesso!');
         updateProductForm.reset();
       } catch (error) {
