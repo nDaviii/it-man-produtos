@@ -36,6 +36,8 @@ async function fetchProducts() {
     if (!response.ok) {
       throw new Error('Erro ao atualizar produto');
     }
+
+    return response.json();
   }
   
   async function deleteProduct(productId) {
