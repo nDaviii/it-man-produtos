@@ -19,7 +19,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepag' },
+  '/': { view: 'pages/homepage' },
 
   // CRUD - produtos
   'POST /product/create': 'ProductController.create',

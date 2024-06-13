@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         productDetailsDiv.innerHTML = `
           <h3>Detalhes do Produto:</h3>
           <p><strong>Nome:</strong> ${product.nome}</p>
-          <p><strong>Descrição:</strong> ${products.description}</p>
+          <p><strong>Descrição:</strong> ${product.description}</p>
           <p><strong>Preço:</strong> ${product.price}</p>
         `;
       } catch (error) {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       const formData = new FormData(updateProductForm);
   
       try {
-        await updateProductId, formData);
+        await updateProduct(productId, formData);
         alert('Produto atualizado com sucesso!');
         updateProductForm.reset();
       } catch (error) {
