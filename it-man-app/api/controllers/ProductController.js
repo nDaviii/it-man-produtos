@@ -7,11 +7,11 @@
 
 
 module.exports = {
-    create: async function (req, res) {
-        try {
-            const { name, description, price } = req.allParams();
-
-            const newProduct = await Product.create({
+  create: async function (req, res) {
+    try {
+         const { name, description, price } = req.allParams();
+        
+        const newProduct = await Product.create({
                 name,
                 description,
                 price
@@ -21,7 +21,7 @@ module.exports = {
         } catch (error) {
             return res.serverError(error);
         }
-    },
+  },
 
     find: async function (req, res) {
         try {
@@ -50,7 +50,7 @@ module.exports = {
             const productId = req.param('id');
             const { name, description, price } = req.allParams();
 
-            const updatedProduct = await Product.update({ id: productId }).set({
+            const updatedProduct = await Product.updateOne({ id: productId }).set({
                 name,
                 description,
                 price
@@ -59,8 +59,6 @@ module.exports = {
             if (!updatedProduct) {
                 return res.notFound('Produto não encontrado');
             }
-
-            return res.json(updatedProduct);
         } catch (error) {
             return res.serverError(error);
         }
@@ -69,7 +67,7 @@ module.exports = {
     delete: async function (req, res) {
         try {
             const productId = req.param('id');
-            const deletedProduct = await Product.delete({ id: productId });
+            const deletedProduct = await Product.destroyOne({ id: productId });
             if (!deletedProduct) {
                 return res.notFound('Produto não encontrado');
             }

@@ -24,9 +24,9 @@ module.exports.routes = {
   // CRUD - produtos
   'POST /product/create': 'ProductController.create',
   'GET /product/:id': 'ProductController.findOne',
-  'GET /products': 'ProductController.find',
-  'PUT /product/:id': 'ProductController.update',
-  'PATCH /product/:id': 'ProductController.delete',
+  'GET /product': 'ProductController.find',
+  'PUT /product/:id': 'ProductController.updateOne',
+  'DELETE /product/:id': 'ProductController.delete',
 
 
   /***************************************************************************
