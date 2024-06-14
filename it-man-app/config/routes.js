@@ -19,14 +19,14 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepag' },
+  '/': { view: 'pages/homepage' },
 
   // CRUD - produtos
   'POST /product/create': 'ProductController.create',
   'GET /product/:id': 'ProductController.findOne',
-  'GET /products': 'ProductController.find',
+  'GET /product': 'ProductController.find',
   'PUT /product/:id': 'ProductController.update',
-  'PATCH /product/:id': 'ProductController.delete',
+  'DELETE /product/:id': 'ProductController.delete',
 
 
   /***************************************************************************
